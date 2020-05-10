@@ -1,14 +1,15 @@
 #pragma once
-#include <string>
+#include<iostream>
+
 class atom
 {
 public:
 	atom();
-	atom(string e, double xx, double yy, double zz);
+	atom(std::string e, int n, double xx, double yy, double zz);
 	void set_coord(double xx, double yy, double zz);
 private:
 	int num;
-	string element;
+	std::string element;
 	int atomic_num;
 	double x;
 	double y;
