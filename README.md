@@ -23,6 +23,10 @@ Additional features: calculation of Degrees of Unsaturation and IR analysis.
 - Geometry analysis is kind of challenging for me since I have think of some functions to use to store values for a lot of numbers. I will reconsider about this choice and maybe change what I want to do. 
 - New feature: Degrees of Unsaturation can be calculated directly from the input string of a molecular formula. The hard thing about this is that the characters can reapeat itself and there isn't necessary a number between all the characters. So I have to think of a way to collect all these info. Right now, I think that `enum` could work and I want to try to see if it is actually practical to use it. I learned from the first project about the usage of `enum` so I think it can apply here, let's see.
 
+### Day 3
+- I have been thinking a lot about how to handle the atom class, maybe I would just make it like the `elements` so they are easier to deal with? I will also need to think of good ways to skip certain characters and spaces in my `.xyz` file.
+- Today I tried to define all the functions and tried that for a long time. Hopefully there could be fewer errors when the program is actually up and running.
+- Also, I was having trouble on how to give IR analysis when the IR values are within mutiple ranges, right now I don't have good solutions for that.
 
 
 
