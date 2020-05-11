@@ -45,4 +45,62 @@ int main()
 
 }
 
+int parse_number(const std::string& str, unsigned pos, unsigned& next_pos)
+{
+    if (pos >= str.size() || !std::isdigit(str.at(pos))) {
+        return -1;
+    }
+    next_pos = pos + 1;
+    while (next_pos < str.size() && std::isdigit(str.at(next_pos))) {
+        next_pos++;
+    }
+    std::string num_str = str.substr(pos, next_pos - pos);
+    return std::atoi(num_str.c_str());
+}
+
+int parse_elem(const std::string& str, unsigned pos, unsigned& next_pos)
+{
+    if (pos >= str.size()) {
+        return -1;
+    }
+    next_pos = pos + 1;
+    switch (str.at(pos)) {
+    case 'C':
+        if (next_pos < str.size() && str.at(next_pos) == 'l') {
+            next_pos++;
+            return ELEM_Cl;
+        }
+        else {
+            return ELEM_C;
+        }
+        break;
+    case 'N':
+        return ELEM_N;
+        break;
+    case 'H':
+        return ELEM_H;
+        break;
+    case 'F':
+        return ELEM_F;
+        break;
+    case 'B':
+        if (next_pos < str.size() && str.at(next_pos) == 'r') {
+            next_pos++;
+            return ELEM_Br;
+        }
+        else {
+            return -1;
+        }
+        break;
+    case 'I':
+        return ELEM_I;
+        break;
+    case 'O':
+        return ELEM_O;
+        break;
+    default:
+        return -1;
+    }
+    return -1;
+}
 
