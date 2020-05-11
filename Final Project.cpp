@@ -30,9 +30,9 @@ int main()
         << "  b. Enter molecular formula to check degrees of unsaturation." << std::endl
         << "  c. Enter IR frequency, check ." << std::endl
         << "  d. Quit." << std::endl;
-    std::cout << " Do you want to?";
+    std::cout << " Do you want to: ";
         std::cin >> choice;
-        std::cout << " Enter your input?";
+        std::cout << " Enter your input: ";
         std::cin >> input;
     //below is codes for degrees of unsaturation
    if (choice == 'b'){
