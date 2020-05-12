@@ -22,7 +22,21 @@ enum ELEM
 }; // use for each elements
 
 int main()
-{
+{    // test code
+    unsigned n;
+    std::cout << parse_number("123", 0, n);
+    std::cout << " " << n << std::endl;
+    std::cout << parse_number("aaa1234a", 3, n);
+    std::cout << " " << n << std::endl;
+    std::cout << parse_elem("C2", 0, n);
+    std::cout << " " << n << std::endl;
+    std::cout << parse_elem("C2H5", 2, n);
+    std::cout << " " << n << std::endl;
+    std::cout << parse_elem("ClCH", 0, n);
+    std::cout << " " << n << std::endl;
+    std::cout << parse_elem("C2H6O", 1, n);
+    std::cout << " " << n << std::endl;
+    
     char choice;
     std::string input;
     std::cout << "  Welcome to Geometry analyzer!" << std::endl
@@ -104,3 +118,12 @@ int parse_elem(const std::string& str, unsigned pos, unsigned& next_pos)
     return -1;
 }
 
+void print_error(const std::string& reason, const std::string& str, unsigned pos)
+{
+    std::cout << "input error: " << reason << " at:" << std::endl;
+    std::cout << str << std::endl;
+    for (unsigned i = 0; i < pos; i++) {
+        std::cout << " ";
+    }
+    std::cout << "^" << std::endl;
+}
