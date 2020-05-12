@@ -28,5 +28,7 @@ Additional features: calculation of Degrees of Unsaturation and IR analysis.
 - Today I tried to define all the functions and tried that for a long time. Hopefully there could be fewer errors when the program is actually up and running.
 - Also, I was having trouble on how to give IR analysis when the IR values are within mutiple ranges, right now I don't have good solutions for that.
 
-
+### Day 4
+- Today I made big progress in the building feature of Degrees of unsaturation(DU) calculations. I was able to solve the problem of repeated elements and added them up.
+- I will look for ways to make these calculations more efficient and also start working on the IR feature. Maybe creating an output file for that, too?
 
