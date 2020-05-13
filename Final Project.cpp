@@ -23,7 +23,7 @@ enum ELEM
 
 int main()
 {    // test code
-    unsigned n;
+    /*unsigned n;
     std::cout << parse_number("123", 0, n);
     std::cout << " " << n << std::endl;
     std::cout << parse_number("aaa1234a", 3, n);
@@ -35,7 +35,7 @@ int main()
     std::cout << parse_elem("ClCH", 0, n);
     std::cout << " " << n << std::endl;
     std::cout << parse_elem("C2H6O", 1, n);
-    std::cout << " " << n << std::endl;
+    std::cout << " " << n << std::endl;*/
     
     char choice;
     std::string input;
@@ -96,7 +96,12 @@ int main()
             std::cout << "O: " << elem_arr[ELEM_O] << std::endl;
             */
            }
-
+           if (is_success) {
+               unsigned elem_x = elem_arr[ELEM_F] + elem_arr[ELEM_Cl] + elem_arr[ELEM_Br] + elem_arr[ELEM_I];
+               std::cout << "Degree of Unsaturation is: "
+                   << ((2 * elem_arr[ELEM_C] + 2) - elem_arr[ELEM_H] + elem_arr[ELEM_N] - elem_x) / 2.0
+                   << std::endl;
+           }
    }        
 
 }
