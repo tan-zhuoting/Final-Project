@@ -22,88 +22,83 @@ enum ELEM
 }; // use for each elements
 
 int main()
-{    // test code
-    /*unsigned n;
-    std::cout << parse_number("123", 0, n);
-    std::cout << " " << n << std::endl;
-    std::cout << parse_number("aaa1234a", 3, n);
-    std::cout << " " << n << std::endl;
-    std::cout << parse_elem("C2", 0, n);
-    std::cout << " " << n << std::endl;
-    std::cout << parse_elem("C2H5", 2, n);
-    std::cout << " " << n << std::endl;
-    std::cout << parse_elem("ClCH", 0, n);
-    std::cout << " " << n << std::endl;
-    std::cout << parse_elem("C2H6O", 1, n);
-    std::cout << " " << n << std::endl;*/
-    
-    char choice;
-    std::string input;
-    std::cout << "  Welcome to Geometry analyzer!" << std::endl
-        << "  a. Upload a .xyz file for geometry analysis." << std::endl
-        << "  b. Enter molecular formula to check degrees of unsaturation." << std::endl
-        << "  c. Enter IR frequency, check the range for functional groups." << std::endl
-        << "  d. Quit." << std::endl;
-    std::cout << " Do you want to: ";
+{
+        char choice;
+        std::string input;
+        std::cout <<  std::endl << "  Welcome to Geometry Analyzer!" ;
+   while (true) {
+            std::cout <<std::endl << "  a. Upload a .xyz file for geometry analysis." << std::endl
+            << "  b. Enter molecular formula to check degrees of unsaturation." << std::endl
+            << "  c. Enter IR frequency, check the range for functional groups." << std::endl
+            << "  d. Quit." << std::endl;
+        std::cout << " Do you want to: ";
         std::cin >> choice;
-        std::cout << " Enter your input: ";
-        std::cin >> input;
-    //below is codes for degrees of unsaturation
-   if (choice == 'b'){
-           if (input.empty()) {
-               std::cout << "input is empty, bye" << std::endl;
-               return 0;
-           }      
-           int elem_arr[ELEM_MAX] = { 0 };
+        
+        if (choice == 'd') return 0;
 
-           bool is_success = true;
-           unsigned i = 0;
-           while (i < input.size()) {
-               ELEM e;
-               unsigned next_i = 0;
-               int ret = parse_elem(input, i, next_i);
-               if (ret == -1) {
-                   is_success = false;
-                   print_error("illegal element", input, i);
-                   break;
-               }
-               e = (ELEM)ret;
-               /* dealing with repeated elements
-               if (elem_arr[e] != 0) {
-                   is_success = false;
-                   print_error("duplicate elememt", line, i);
-                   break;
-               }*/
-               i = next_i;
-               ret = parse_number(input, i, next_i);
-               if (ret == -1) {
-                   elem_arr[e] += 1;
-                   //i++;
-               }
-               else {
-                   elem_arr[e] += ret;
-                   i = next_i;
-          
-               }
-               /* test code
-            std::cout << "C: " << elem_arr[ELEM_C] << std::endl;
-            std::cout << "N: " << elem_arr[ELEM_N] << std::endl;
-            std::cout << "H: " << elem_arr[ELEM_H] << std::endl;
-            std::cout << "F: " << elem_arr[ELEM_F] << std::endl;
-            std::cout << "Cl: " << elem_arr[ELEM_Cl] << std::endl;
-            std::cout << "Br: " << elem_arr[ELEM_Br] << std::endl;
-            std::cout << "I: " << elem_arr[ELEM_I] << std::endl;
-            std::cout << "O: " << elem_arr[ELEM_O] << std::endl;
-            */
-           }
-           if (is_success) {
-               unsigned elem_x = elem_arr[ELEM_F] + elem_arr[ELEM_Cl] + elem_arr[ELEM_Br] + elem_arr[ELEM_I];
-               std::cout << "Degree of Unsaturation is: "
-                   << ((2 * elem_arr[ELEM_C] + 2) - elem_arr[ELEM_H] + elem_arr[ELEM_N] - elem_x) / 2.0
-                   << std::endl;
-           }
-   }        
+        std::cout << " Enter your input (empty to quit): ";
+        std::cin.ignore();
+        std::getline(std::cin, input);
+        
+        if (input.empty()) {
+        std::cout << " Input is empty." << std::endl;
+                return 0;
+        }
+        
+        //below are codes for degrees of unsaturation
+        if (choice == 'b') {
 
+            int elem_arr[ELEM_MAX] = { 0 };
+
+            bool is_success = true;
+            unsigned i = 0;
+            while (i < input.size()) {
+                ELEM e;
+                unsigned next_i = 0;
+                int ret = parse_elem(input, i, next_i);
+                if (ret == -1) {
+                    is_success = false;
+                    print_error("illegal element", input, i);
+                    break;
+                }
+                e = (ELEM)ret;
+                /* 
+                if (elem_arr[e] != 0) { 
+                    is_success = false;
+                    print_error("duplicate elememt", line, i);
+                    break;
+                }*/
+                i = next_i;
+                ret = parse_number(input, i, next_i);
+                if (ret == -1) {
+                    elem_arr[e] += 1;
+                    //i++;
+                }
+                else {
+                    elem_arr[e] += ret;
+                    i = next_i;
+                }
+            }
+
+                /* test code
+             std::cout << "C: " << elem_arr[ELEM_C] << std::endl;
+             std::cout << "N: " << elem_arr[ELEM_N] << std::endl;
+             std::cout << "H: " << elem_arr[ELEM_H] << std::endl;
+             std::cout << "F: " << elem_arr[ELEM_F] << std::endl;
+             std::cout << "Cl: " << elem_arr[ELEM_Cl] << std::endl;
+             std::cout << "Br: " << elem_arr[ELEM_Br] << std::endl;
+             std::cout << "I: " << elem_arr[ELEM_I] << std::endl;
+             std::cout << "O: " << elem_arr[ELEM_O] << std::endl;
+             */
+           
+            if (is_success) {
+                unsigned elem_x = elem_arr[ELEM_F] + elem_arr[ELEM_Cl] + elem_arr[ELEM_Br] + elem_arr[ELEM_I];
+                std::cout << " Degree of Unsaturation is: "
+                    << ((2 * elem_arr[ELEM_C] + 2) - elem_arr[ELEM_H] + elem_arr[ELEM_N] - elem_x) / 2.0
+                    << std::endl << std::endl;
+            }
+        }
+    }
 }
 
 int parse_number(const std::string& str, unsigned pos, unsigned& next_pos)

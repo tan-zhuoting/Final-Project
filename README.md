@@ -32,3 +32,8 @@ Additional features: calculation of Degrees of Unsaturation and IR analysis.
 - Today I made big progress in the building feature of Degrees of unsaturation(DU) calculations. I was able to solve the problem of repeated elements and added them up.
 - I will look for ways to make these calculations more efficient and also start working on the IR feature. Maybe creating an output file for that, too?
 
+### Day 5 
+- I found so many issue in my codes and tried my best to tackle each of them. I eventually got to the point that everthing works fine. I found that sometimes my calculation results are off by a good amount, but I think I found that the problem is at where I placed the loop and have the declarition of variables.
+- I added error input senario to make it not going to infinite loop if there is a wrong input or empty input. 
+- Up to this point, `DU calculation`for the choice `b` is completely finished.
+
