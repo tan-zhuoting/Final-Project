@@ -13,7 +13,7 @@ public:
 		std::string freq_str = s.substr(0, 20);
 		size_t pos_line = freq_str.find_first_of('-');
 		size_t pos_quote = freq_str.find_first_of('(');
-		if (pos_line == std::string::npos) {
+		if (pos_line == std::string::npos) { //reach the end of string
 			if (pos_quote == std::string::npos) {
 				assert(0);
 				return;

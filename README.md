@@ -37,5 +37,8 @@ Additional features: calculation of Degrees of Unsaturation and IR analysis.
 - I added error input senario to make it not going to infinite loop if there is a wrong input or empty input. 
 - Up to this point, `DU calculation`for the choice `b` is completely finished.
 
+### Day 6
+- I started coding for part c, IR analysis. I created the IR class and defined functions for it. Basically, it would perform a search within the given `Data.txt` document to find if the value lives within certain range. The search is perform by `find_first_of` and separating the data in the `Data.txt` file and change the string range data to integers.
+- When looking for methods to perform this search, I learned many new things including the usage of `string::npos` and `assert`. There is also another way to do this by using `std::set`, which I did not fully understaqnd so I have decided to play it safe for now. I might change it if everything else woks out and I had extra time to experiment it.
 
 
