@@ -149,9 +149,11 @@
   <ItemGroup>
     <ClCompile Include="atom.cpp" />
     <ClCompile Include="Final Project.cpp" />
+    <ClCompile Include="IR.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="atom.h" />
+    <ClInclude Include="IR.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
