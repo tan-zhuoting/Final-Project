@@ -37,3 +37,5 @@ Additional features: calculation of Degrees of Unsaturation and IR analysis.
 - I added error input senario to make it not going to infinite loop if there is a wrong input or empty input. 
 - Up to this point, `DU calculation`for the choice `b` is completely finished.
 
+
+
