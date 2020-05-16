@@ -4,6 +4,8 @@
 #include <string>
 #include <cctype>
 #include <cstdlib>
+#include <vector>
+#include "IR.h"
 
 int parse_number(const std::string& str, unsigned pos, unsigned& next_pos);
 int parse_elem(const std::string& str, unsigned pos, unsigned& next_pos);
@@ -96,6 +98,42 @@ int main()
 		//below are codes for IR frequency anaylysis
 		if (choice == 'c')
 		{
+			std::cout << "Searching..." << std::endl;
+			std::vector<IR> irs;
+
+			std::ifstream ifs("data.txt");
+			if (!ifs.is_open()){
+				std::cout<<"fail to open file";
+				return 0;
+			}
+				
+			std::string s;
+			while (getline(ifs, s)) {
+				IR ir(s);
+				irs.push_back(ir);
+			}
+			ifs.close();
+
+			// 	for(int i = 0; i <10; ++i){
+			// 		IR ir;
+			// 		ir.minFreq_ = i;
+			// 		ir.maxFreq_ = i + 10;
+			// 		ir.article_ = to_string(ir.minFreq_) + "_" + to_string(ir.maxFreq_);
+			// 		irs.push_back(ir);
+			// 	}
+			int count = 0;
+			for (auto& ir : irs) {
+				if (ir.MatchFreq(stoi(input))) {
+					++count;
+					std::cout << ir.article_ << std::endl;
+					/*ofstream ofs("result.txt");
+					ofs << ir.article_ << std::endl;
+					ofs.close();*/
+				}
+			}
+			if (count == 0)
+				std::cout << "No Match" << std::endl;
+			std::cout << std::endl;
 
 		}
 	}

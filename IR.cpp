@@ -2,7 +2,7 @@
 #include <string>
 #include <cassert>
 
-IR::IR(){}
+IR::IR() {}
 
 IR::IR(std::string s) : article_(s) {
 	std::string freq_str = s.substr(0, 20);
@@ -31,5 +31,6 @@ IR::IR(std::string s) : article_(s) {
 			minFreq_ = stoi(min_str);
 		}
 	}
-	}
+}
+
 bool IR::MatchFreq(int freq) { return freq >= minFreq_ && freq <= maxFreq_; }
