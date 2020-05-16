@@ -42,7 +42,11 @@ Additional features: calculation of Degrees of Unsaturation and IR analysis.
 - When looking for methods to perform this search, I learned many new things including the usage of `string::npos` and `assert`. There is also another way to do this by using `std::set`, which I did not fully understaqnd so I have decided to play it safe for now. I might change it if everything else woks out and I had extra time to experiment it.
 
 ### Day 7
-- I decided to make IR a struct since I have never done that before, and it is pretty cool to try it. 
+- I decided to make `IR` a struct since I have never done that before, and it is pretty cool to try it. 
 - I used vector as the container for collected information and everthing work out well as planned.
 - However, I have encounter a problem that the console cannot display what I want, since there are some special characters and chemical symbols. So, my console ouput is like a mess right now. I have no idea how to sole this problem :(
 
+### Day 8
+- I added the new option of faster calculating of `IR`, and I am learning how to use std::set to perform the search.
+- For this new option, I created another class particularly for `IR`
+- The problem of console display still exists, I have tried many different ways but it is still a mess. There might be something wrong with my computer, becuase I tried it on my Dad's Macbook and it showed up just fine. I still want to change it though. 
