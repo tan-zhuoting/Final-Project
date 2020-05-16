@@ -150,13 +150,19 @@
     <ClCompile Include="atom.cpp" />
     <ClCompile Include="Final Project.cpp" />
     <ClCompile Include="IR.cpp" />
+    <ClCompile Include="IRResolver.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="atom.h" />
     <ClInclude Include="IR.h" />
+    <ClInclude Include="IRResolver.hpp" />
+    <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="data.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Final Project.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

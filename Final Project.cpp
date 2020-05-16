@@ -32,11 +32,13 @@ int main()
 		std::cout << std::endl << "  a. Upload a .xyz file for geometry analysis." << std::endl
 			<< "  b. Enter molecular formula to check degrees of unsaturation." << std::endl
 			<< "  c. Enter IR frequency, check the range for functional groups." << std::endl
-			<< "  d. Quit." << std::endl;
+			<< "  d. IR frequency check set(faster)." << std::endl
+			<< "  e. Quit." << std::endl;
+
 		std::cout << " Do you want to: ";
 		std::cin >> choice;
 
-		if (choice == 'd') return 0;
+		if (choice == 'e') return 0;
 
 		std::cout << " Enter your input (empty to quit): ";
 		std::cin.ignore();
@@ -134,6 +136,11 @@ int main()
 			if (count == 0)
 				std::cout << "No Match" << std::endl;
 			std::cout << std::endl;
+
+		}
+
+		//below are codes for faster IR frequency anaylysis
+		if (choice == 'd') {
 
 		}
 	}
