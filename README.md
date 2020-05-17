@@ -50,3 +50,8 @@ Additional features: calculation of Degrees of Unsaturation and IR analysis.
 - I added the new option of faster calculating of `IR`, and I am learning how to use std::set to perform the search.
 - For this new option, I created another class particularly for `IR`
 - The problem of console display still exists, I have tried many different ways but it is still a mess. There might be something wrong with my computer, becuase I tried it on my Dad's Macbook and it showed up just fine. I still want to change it though. 
+
+### Day 9
+- I alomst finished setting up for the `IRResolver` that can perform searches with set and shared pointer. I learned about keys, fat key and light key and the `C++14` way of using std::set `find`from the website https://en.cppreference.com/w/cpp/container/set/find and found that very useful
+- Also, I learned how to use `std::less<>`, it is `a specialization of std::less with parameter and return type deduced`. Normally it is `std::less<xxxx>`, here I didn't use `xxxx` and want to deduce accroding the the actual code
+- The main point of using `std::set` is to collect the overlaping section when inserting data, and split the overlapping section to non-overlapping and insert again

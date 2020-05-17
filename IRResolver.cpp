@@ -68,3 +68,19 @@ void IRResolver::do_insert(const IRFatKey& fat_key)
         std::cout << "inserted: " << fat_key.min_freq << "-" << fat_key.max_freq << "\n";
     }
 }
+
+bool IRResolver::add_record(std::string record)
+{
+
+}
+
+std::vector<std::shared_ptr<std::string>> IRResolver::find_records(unsigned freq)
+{
+    auto iter = ir_set.find(freq);
+    if (iter == ir_set.end()) {
+        return {};
+    }
+    else {
+        return iter->records;
+    }
+}
