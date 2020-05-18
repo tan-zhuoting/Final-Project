@@ -71,7 +71,26 @@ void IRResolver::do_insert(const IRFatKey& fat_key)
 
 bool IRResolver::add_record(std::string record)
 {
-
+    auto pos = record.find_first_of(' ');
+    auto sub = record.substr(0, pos);
+    IRFatKey fat_key;
+    int ret = std::sscanf(sub.c_str(), "%u-%u(", &fat_key.max_freq, &fat_key.min_freq);
+    if (ret != 2) {
+        ret = std::sscanf(sub.c_str(), "%u(", &fat_key.min_freq);
+        if (ret != 1) {
+            return false;
+        }
+        fat_key.max_freq = fat_key.min_freq;
+    }
+    else {
+        if (fat_key.max_freq < fat_key.min_freq) {
+            return false;
+        }
+    }
+    auto rptr = std::make_shared<std::string>(record);
+    fat_key.records.push_back(rptr);
+    do_insert(fat_key);
+    return true;
 }
 
 std::vector<std::shared_ptr<std::string>> IRResolver::find_records(unsigned freq)

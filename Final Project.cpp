@@ -6,6 +6,8 @@
 #include <cstdlib>
 #include <vector>
 #include "IR.h"
+#include "IRResolver.hpp"
+
 
 int parse_number(const std::string& str, unsigned pos, unsigned& next_pos);
 int parse_elem(const std::string& str, unsigned pos, unsigned& next_pos);
@@ -141,7 +143,26 @@ int main()
 
 		//below are codes for faster IR frequency anaylysis
 		if (choice == 'd') {
-
+			IRResolver irr;
+			std::ifstream ifs("data.txt");
+			std::string line;
+			if (!ifs.is_open()) {
+				std::cout << "fail to open file";
+				return 0;
+			}
+			while (std::getline(ifs, line)) {
+				irr.add_record(line);
+			}
+			ifs.close();
+			while (true) {
+				if (stoi(input) == 0) {
+					break;
+				}
+				auto recs = irr.find_records(stoi(input));
+				for (auto& r : recs) {
+					std::cout << *r << std::endl;
+				}
+			}
 		}
 	}
 
