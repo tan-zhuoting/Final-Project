@@ -12,7 +12,8 @@ public:
     bool add_record(std::string record);
     std::vector<std::shared_ptr<std::string>> find_records(unsigned freq);
 private:
-    struct IRFatKey {
+    struct IRFatKey
+    {
         unsigned min_freq;
         unsigned max_freq;
         std::vector<std::shared_ptr<std::string>> records;
@@ -32,11 +33,9 @@ private:
     friend bool operator<(const unsigned& k1, const IRFatKey& k2)
     {
         return k1 < k2.min_freq;
-    }    
-    
+    }
     void do_insert(const IRFatKey& fat_key);
 
     std::set<IRFatKey, std::less<>> ir_set;
-
 };
 
