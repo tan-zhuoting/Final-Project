@@ -155,9 +155,6 @@ int main()
 			}
 			ifs.close();
 			while (true) {
-				if (stoi(input) == 0) {
-					break;
-				}
 				auto recs = irr.find_records(stoi(input));
 				for (auto& r : recs) {
 					std::cout << *r << std::endl;
