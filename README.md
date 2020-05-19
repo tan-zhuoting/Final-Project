@@ -59,3 +59,7 @@ Additional features: calculation of Degrees of Unsaturation and IR analysis.
 ### Day 10
 - Today I put to a test for the `IRResolver` but it did not work, I am not sure where the problem is and will do more research on why.
 - I will also start thinking about how to deal with geometry analysis the same way as it is collecting the data.
+
+### Day 11
+- I finally figured out that my code does not work because visual studio cannot read `scanf`, I think that `sscanf` would be very useful for reading my formatted `data.txt` in reading string.
+- I followed the tutorial online and fixed this isssue, but the issue of infinite loop is still not fixed, I will look into ways to do that.
