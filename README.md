@@ -58,8 +58,14 @@ Additional features: calculation of Degrees of Unsaturation and IR analysis.
 
 ### Day 10
 - Today I put to a test for the `IRResolver` but it did not work, I am not sure where the problem is and will do more research on why.
+- My main idea for `IRResolver` is converting all the read in data to intervals that do not overlap, and then put it into `std::set`, the convert and insert is happening at the same time, and it is a recursive process
 - I will also start thinking about how to deal with geometry analysis the same way as it is collecting the data.
 
 ### Day 11
 - I finally figured out that my code does not work because visual studio cannot read `scanf`, I think that `sscanf` would be very useful for reading my formatted `data.txt` in reading string.
 - I followed the tutorial online and fixed this isssue, but the issue of infinite loop is still not fixed, I will look into ways to do that.
+
+### Day 12
+- Today I fixed the issue of inifinite loop! It turned out to just be a small bug that I forgot to delete one of the while loop. 
+- However, like the case in `IR`, the display on my console is still pretty bad that it does not show the special character. 
+- We have covered how to use Qt, that makes me really want to make a Qt for my IR search function too. I want to try to do that if there is extra time left to enhance my project.
