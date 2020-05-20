@@ -50,7 +50,7 @@ int main()
 			std::cout << " Input is empty." << std::endl;
 			return 0;
 		}
-		
+
 		//below are codes for geometry analysis
 		if (choice == 'a')
 		{
@@ -98,7 +98,7 @@ int main()
 					<< std::endl << std::endl;
 			}
 		}
-		
+
 		//below are codes for IR frequency anaylysis
 		if (choice == 'c')
 		{
@@ -106,11 +106,11 @@ int main()
 			std::vector<IR> irs;
 
 			std::ifstream ifs("data.txt");
-			if (!ifs.is_open()){
-				std::cout<<"fail to open file";
+			if (!ifs.is_open()) {
+				std::cout << "fail to open file";
 				return 0;
 			}
-				
+
 			std::string s;
 			while (getline(ifs, s)) {
 				IR ir(s);
@@ -154,12 +154,9 @@ int main()
 				irr.add_record(line);
 			}
 			ifs.close();
-			while (true) {
-				auto recs = irr.find_records(stoi(input));
-				for (auto& r : recs) {
-					std::cout << *r << std::endl;
-				}
-				break;
+			auto recs = irr.find_records(stoi(input));
+			for (auto& r : recs) {
+				std::cout << *r << std::endl;
 			}
 		}
 	}
