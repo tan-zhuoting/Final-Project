@@ -159,6 +159,7 @@ int main()
 				for (auto& r : recs) {
 					std::cout << *r << std::endl;
 				}
+				break;
 			}
 		}
 	}
