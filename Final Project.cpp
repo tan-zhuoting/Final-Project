@@ -27,6 +27,7 @@ enum ELEM
 
 int main()
 {
+	system("chcp 65001");
 	char choice;
 	std::string input;
 	std::cout << std::endl << "  Welcome to Geometry Analyzer!";
@@ -40,6 +41,7 @@ int main()
 
 		std::cout << " Do you want to: ";
 		std::cin >> choice;
+
 		if (choice != 'e' && choice != 'd' && choice != 'c' && choice != 'b' && choice != 'a')
 			std::cout << std::endl << "  Wrong letter, try again.";
 		else break;

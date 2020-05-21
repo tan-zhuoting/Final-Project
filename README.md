@@ -69,3 +69,8 @@ Additional features: calculation of Degrees of Unsaturation and IR analysis.
 - Today I fixed the issue of inifinite loop! It turned out to just be a small bug that I forgot to delete one of the while loop. 
 - However, like the case in `IR`, the display on my console is still pretty bad that it does not show the special character. 
 - We have covered how to use Qt, that makes me really want to make a Qt for my IR search function too. I want to try to do that if there is extra time left to enhance my project.
+
+### Day 13
+- After trying to ask the TA and my CS major friends, I have finally solved the display problem! Yay! 
+- This is because my console does not show `UTF-8` characters. I solved this by adding `system("chcp 65001")` so that my console is showing the correct things now! I can finally use the IR feature correctly to predict functional groups.
+- I created another repository to develop the Qt app for my `IRResolver` feature, but I am not sure how to add that to this repository, maybe I will just `colone` and `push` again to here, or I have read about the `sub-module` in git, it can basically create a sub-repository under this one. I will figure out how to do that. For now, I will just update my progress on the Qt app here. 
