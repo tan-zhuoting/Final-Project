@@ -31,6 +31,7 @@ int main()
 	std::string input;
 	std::cout << std::endl << "  Welcome to Geometry Analyzer!";
 	while (true) {
+		while (true) {
 		std::cout << std::endl << "  a. Upload a .xyz file for geometry analysis." << std::endl
 			<< "  b. Enter molecular formula to check degrees of unsaturation." << std::endl
 			<< "  c. Enter IR frequency, check the range for functional groups." << std::endl
@@ -39,6 +40,10 @@ int main()
 
 		std::cout << " Do you want to: ";
 		std::cin >> choice;
+		if (choice != 'e' && choice != 'd' && choice != 'c' && choice != 'b' && choice != 'a')
+			std::cout << std::endl << "  Wrong letter, try again.";
+		else break;
+		}
 
 		if (choice == 'e') return 0;
 
