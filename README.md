@@ -73,4 +73,9 @@ Additional features: calculation of Degrees of Unsaturation and IR analysis.
 ### Day 13
 - After trying to ask the TA and my CS major friends, I have finally solved the display problem! Yay! 
 - This is because my console does not show `UTF-8` characters. I solved this by adding `system("chcp 65001")` so that my console is showing the correct things now! I can finally use the IR feature correctly to predict functional groups.
-- I created another repository to develop the Qt app for my `IRResolver` feature, but I am not sure how to add that to this repository, maybe I will just `colone` and `push` again to here, or I have read about the `sub-module` in git, it can basically create a sub-repository under this one. I will figure out how to do that. For now, I will just update my progress on the Qt app here. 
+- I created another repository to develop the Qt app for my `IRResolver` feature, but I am not sure how to add that to this repository, maybe I will just `colone` and `push` again to here, or I have read about the `sub-module` in git, it can basically create a sub-repository under this one. I will figure out how to do that. For now, I will just update my progress on the Qt app here.
+
+### Day 14
+- Today I started working on the Qt version `IRResolver`, I made some adjustment of the files but have not start designing the graphical interface yet. This is the baic implementation.
+- I want to use let my Qt app to show the text the same as my C++ console ouput, and I am still learning how to do that as I am still not that good at Qt
+- For now, choice `a` is still not useful for this C++ app, I will finish developing choice `a` after finishing this Qt app.
