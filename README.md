@@ -79,3 +79,7 @@ Additional features: calculation of Degrees of Unsaturation and IR analysis.
 - Today I started working on the Qt version `IRResolver`, I made some adjustment of the files but have not start designing the graphical interface yet. This is the baic implementation.
 - I want to use let my Qt app to show the text the same as my C++ console ouput, and I am still learning how to do that as I am still not that good at Qt
 - For now, choice `a` is still not useful for this C++ app, I will finish developing choice `a` after finishing this Qt app.
+
+### Day 15
+- Today I fixed some bugs in my Qt documents, and I have an idea about the design of the Qt app now.
+- I want a box that showes the corrsponding frequency and functional groups, at the bottom of it I want something like what it is in `grade_calculator`. It will simulate the x-axis for frequencies, so the information will show up as I drag along the tab. I can also manually enter the frequency to show the information. I think this will make a simple but very practical app to use. I will learn how to make it fancy if I have extra time.
