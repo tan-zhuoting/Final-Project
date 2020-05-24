@@ -83,3 +83,7 @@ Additional features: calculation of Degrees of Unsaturation and IR analysis.
 ### Day 15
 - Today I fixed some bugs in my Qt documents, and I have an idea about the design of the Qt app now.
 - I want a box that showes the corrsponding frequency and functional groups, at the bottom of it I want something like what it is in `grade_calculator`. It will simulate the x-axis for frequencies, so the information will show up as I drag along the tab. I can also manually enter the frequency to show the information. I think this will make a simple but very practical app to use. I will learn how to make it fancy if I have extra time.
+
+### Day 16 
+- Today I finished designing the graphics of my Qt app and added the manu, message box feature and finished connecting it to the read file feature I already have. 
+- I have an idea for the choice `a` now and will continue working on choice `a` while also completing the Qt app.
