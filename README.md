@@ -87,3 +87,8 @@ Additional features: calculation of Degrees of Unsaturation and IR analysis.
 ### Day 16 
 - Today I finished designing the graphics of my Qt app and added the manu, message box feature and finished connecting it to the read file feature I already have. 
 - I have an idea for the choice `a` now and will continue working on choice `a` while also completing the Qt app.
+
+### Day 17
+- I continue designing my Qt app and implementing the features. 
+- I want to find a way to input the data.txt file so that I don't have to put it under the same folder and change name every time. I could input any file and it would work fine too.
+- I now know how to add the submodule to my final project repository. I will add it once the Qt project is completely finished. 
