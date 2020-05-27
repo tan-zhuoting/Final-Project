@@ -92,3 +92,7 @@ Additional features: calculation of Degrees of Unsaturation and IR analysis.
 - I continue designing my Qt app and implementing the features. 
 - I want to find a way to input the data.txt file so that I don't have to put it under the same folder and change name every time. I could input any file and it would work fine too.
 - I now know how to add the submodule to my final project repository. I will add it once the Qt project is completely finished. 
+
+### Day 18
+- I learned to develop a very practical feature for my Qt app: double click to copy or edit the result. 
+- I made more improvements on the app and will be finished with it soon.
