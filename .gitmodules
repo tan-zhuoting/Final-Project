@@ -1,0 +1,3 @@
+[submodule "IRResolver"]
+	path = IRResolver
+	url = https://github.com/tan-zhuoting/IRResolver.git
