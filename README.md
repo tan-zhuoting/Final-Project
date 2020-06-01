@@ -101,3 +101,8 @@ Additional features: calculation of Degrees of Unsaturation and IR analysis.
 - I am officially finished with the Qt version of IRResolver, but there is a problem that I cannot run it on my Qt Creator and I don't know why. I tried to download it from the git repository I made, and it turned out to work just fine using the downloaded files. There might be something wrong with my Qt creator or I did not set it up correctly. I will just leave it like this and show the effect using a video if others cannot get it running. 
 - I will add the submodule to this repository. Hopefully it is visible.
 - I will continue with choice `a` from now on.
+
+### Day 20
+- I thought of a good way to store the data for molecule. Since the `xyz` file first line is the total number of atom, I took advantage of that fact and made reading in the number much easier. I am happy that I can get the coordination numbers with such a simple method.
+- My next plan is to collect all atoms in the molecule as a list and then calculate the distances recursively. 
+- For now, I think I've got choice `a` working and I will continue investigating better methods to perform the calculation for geometry analysis.
