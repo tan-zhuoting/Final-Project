@@ -7,15 +7,14 @@ atom::atom() {
 	z = 0;
 	num = 0;
 	element = "empty";
-	atomic_num = 0;
+	//atomic_num = 0;
 }
-atom::atom (std::string e, int n, double xx, double yy, double zz) {
+atom::atom (std::string e, double xx, double yy, double zz) {
 	x = xx;
 	y = yy;
 	z = zz;
-	num = n;
 	element = e;
-	atomic_num = 0;
+	//atomic_num = 0;
 
 }
 

@@ -1,10 +1,12 @@
 
 #include <iostream>
 #include <fstream>
+#include <sstream>
 #include <string>
 #include <cctype>
 #include <cstdlib>
 #include <vector>
+#include "atom.h"
 #include "IR.h"
 #include "IRResolver.hpp"
 
@@ -61,9 +63,26 @@ int main()
 		//below are codes for geometry analysis
 		if (choice == 'a')
 		{
+			std::ifstream ifs(input.c_str());
 
+			if (!ifs.is_open()) {
+				std::cout << "fail to open file";
+				return 0;
+			}
+			
+			//std::vector<atom> molecule;
+			std::string line, ele;
+			int total;
+			double xx, yy, zz;
+			ifs >> total;
+			for (size_t i = 0; i < total; i++)
+			{	
+				ifs >> ele >> xx >> yy >> zz;
+				//molecule.push_back(atom(ele,xx,yy,zz));
+			}
+			ifs.close();
 
-
+			std::cout << xx << yy << zz;
 
 
 

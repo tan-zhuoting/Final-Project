@@ -98,6 +98,6 @@ Additional features: calculation of Degrees of Unsaturation and IR analysis.
 - I made more improvements on the app and will be finished with it soon.
 
 ### Day 19
-- I am officially finished with the Qt version of IRResolver, but there is a problem that I cannot run it on my Qt Creator and I don't know why. I tried to download it from the git repository I made, and it turned out to work just fine using the downloaded files. There might be something worong with my Qt creator or I did not set it up correctly. I will just leave it like this and show the effect using a video if others cannot get it running. 
+- I am officially finished with the Qt version of IRResolver, but there is a problem that I cannot run it on my Qt Creator and I don't know why. I tried to download it from the git repository I made, and it turned out to work just fine using the downloaded files. There might be something wrong with my Qt creator or I did not set it up correctly. I will just leave it like this and show the effect using a video if others cannot get it running. 
 - I will add the submodule to this repository. Hopefully it is visible.
 - I will continue with choice `a` from now on.
