@@ -1,7 +1,6 @@
 
 #include <iostream>
 #include <fstream>
-#include <sstream>
 #include <string>
 #include <cctype>
 #include <cstdlib>
@@ -70,7 +69,7 @@ int main()
 				return 0;
 			}
 			
-			//std::vector<atom> molecule;
+			std::vector<atom> molecule;
 			std::string line, ele;
 			int total;
 			double xx, yy, zz;
@@ -78,11 +77,19 @@ int main()
 			for (size_t i = 0; i < total; i++)
 			{	
 				ifs >> ele >> xx >> yy >> zz;
-				//molecule.push_back(atom(ele,xx,yy,zz));
+				molecule.push_back(atom(ele,xx,yy,zz));
 			}
 			ifs.close();
 
-			std::cout << xx << yy << zz;
+			for (size_t k = 0; k < molecule.size(); k++)
+			{
+				
+			}
+			
+
+
+			//std::cout << xx << yy << zz;
+
 
 
 

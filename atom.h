@@ -7,6 +7,7 @@ public:
 	atom();
 	atom(std::string e, double xx, double yy, double zz);
 	void set_coord(double xx, double yy, double zz);
+	void set_num(int n);
 private:
 	int num;
 	std::string element;
