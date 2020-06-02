@@ -1,17 +1,20 @@
 #pragma once
 #include<iostream>
+#include<vector>
 
-class atom
+struct atom
 {
-public:
 	atom();
 	atom(std::string e, double xx, double yy, double zz);
 	void set_coord(double xx, double yy, double zz);
-	void set_num(int n);
-private:
+	//void set_num(int n);
 	int num;
 	std::string element;
-	//int atomic_num;
+
+	
+	std::vector<double> distances;
+	double cal_dis(std::vector<atom> m);
+	
 	double x;
 	double y;
 	double z;

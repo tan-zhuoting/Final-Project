@@ -81,9 +81,18 @@ int main()
 			}
 			ifs.close();
 
-			for (size_t k = 0; k < molecule.size(); k++)
-			{
-				
+	//		for (size_t k = 0; k < molecule.size(); k++)
+	//		{	
+	//			if (k == 0) molecule[k].num=1;
+	//			if (molecule[k].element == molecule[k+1].element); //if they have the same element then number them
+	//			
+	//		}
+
+			//print
+			for (size_t j = 0; j < molecule.size(); j++)
+			{	
+				std::cout << molecule[j].element<< molecule[j].x << molecule[j].y << molecule[j].z;
+
 			}
 			
 
