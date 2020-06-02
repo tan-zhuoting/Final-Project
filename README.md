@@ -106,3 +106,7 @@ Additional features: calculation of Degrees of Unsaturation and IR analysis.
 - I thought of a good way to store the data for molecule. Since the `xyz` file first line is the total number of atom, I took advantage of that fact and made reading in the number much easier. I am happy that I can get the coordination numbers with such a simple method.
 - My next plan is to collect all atoms in the molecule as a list and then calculate the distances recursively. 
 - For now, I think I've got choice `a` working and I will continue investigating better methods to perform the calculation for geometry analysis.
+
+### Day 21
+- I made a lot of progress in the intratomic distances calculations. I made a container as a member for each atom and let it store all possilbe intratomic distances it has, and I implemented many useful functions to give output data.
+- The next part should be formatting. I want the output to be a table the has atom type and atom number on top and on the side so all the possible distances can show up. I might have to use `setw` and `set_precision` again.

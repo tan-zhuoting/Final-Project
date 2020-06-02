@@ -11,7 +11,7 @@ struct atom
 	int num;
 	std::string element;
 
-	
+	void print();
 	std::vector<double> distances;
 	double cal_dis(std::vector<atom> m);
 	
