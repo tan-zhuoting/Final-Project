@@ -10,7 +10,6 @@
 #include "IR.h"
 #include "IRResolver.hpp"
 
-
 int parse_number(const std::string& str, unsigned pos, unsigned& next_pos);
 int parse_elem(const std::string& str, unsigned pos, unsigned& next_pos);
 void print_error(const std::string& reason, const std::string& str, unsigned pos);
@@ -35,18 +34,18 @@ int main()
 	std::cout << std::endl << "  Welcome to Geometry Analyzer!";
 	while (true) {
 		while (true) {
-		std::cout << std::endl << "  a. Upload a .xyz file for geometry analysis." << std::endl
-			<< "  b. Enter molecular formula to check degrees of unsaturation." << std::endl
-			<< "  c. Enter IR frequency, check the range for functional groups." << std::endl
-			<< "  d. IR frequency check set(faster)." << std::endl
-			<< "  e. Quit." << std::endl;
+			std::cout << std::endl << "  a. Upload a .xyz file for geometry analysis." << std::endl
+				<< "  b. Enter molecular formula to check degrees of unsaturation." << std::endl
+				<< "  c. Enter IR frequency, check the range for functional groups." << std::endl
+				<< "  d. IR frequency check set(faster)." << std::endl
+				<< "  e. Quit." << std::endl;
 
-		std::cout << " Do you want to: ";
-		std::cin >> choice;
+			std::cout << " Do you want to: ";
+			std::cin >> choice;
 
-		if (choice != 'e' && choice != 'd' && choice != 'c' && choice != 'b' && choice != 'a')
-			std::cout << std::endl << "  Wrong letter, try again.";
-		else break;
+			if (choice != 'e' && choice != 'd' && choice != 'c' && choice != 'b' && choice != 'a')
+				std::cout << std::endl << "  Wrong letter, try again.";
+			else break;
 		}
 
 		if (choice == 'e') {
@@ -72,29 +71,29 @@ int main()
 				std::cout << "fail to open file";
 				return 0;
 			}
-			
+
 			std::vector<atom> molecule;
 			std::string line, ele;
 			int total;
 			double xx, yy, zz;
 			ifs >> total;
 			for (size_t i = 0; i < total; i++)
-			{	
+			{
 				ifs >> ele >> xx >> yy >> zz;
-				molecule.push_back(atom(ele,xx,yy,zz));
+				molecule.push_back(atom(ele, xx, yy, zz));
 			}
 			ifs.close();
 
 			std::cout << std::endl << std::setprecision(2) << std::fixed;
-			
+
 			for (size_t k = 0; k < molecule.size(); k++)
 			{
-				std::cout <<std::setw(5)<< molecule[k].element << " ";
+				std::cout << std::setw(5) << molecule[k].element << " ";
 
 			}
 
 			for (size_t j = 0; j < molecule.size(); j++)
-			{	
+			{
 				molecule[j].cal_dis(molecule);
 				molecule[j].print();
 			}
@@ -104,7 +103,7 @@ int main()
 			std::cout << " ";
 			molecule[num - unsigned(1)].print();
 			std::cout << std::endl;
-			
+
 		}
 
 		//below are codes for degrees of unsaturation

@@ -14,7 +14,7 @@ struct atom
 	void print();
 	std::vector<double> distances;
 	void cal_dis(std::vector<atom>& m);
-	
+
 	double x;
 	double y;
 	double z;
