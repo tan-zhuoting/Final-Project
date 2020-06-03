@@ -1,5 +1,6 @@
 
 #include <iostream>
+#include <iomanip>
 #include <fstream>
 #include <string>
 #include <cctype>
@@ -48,7 +49,10 @@ int main()
 		else break;
 		}
 
-		if (choice == 'e') return 0;
+		if (choice == 'e') {
+			std::cout << " OK, bye!";
+			return 0;
+		}
 
 		std::cout << " Enter your input (empty to quit): ";
 		std::cin.ignore();
@@ -81,28 +85,26 @@ int main()
 			}
 			ifs.close();
 
-	//		for (size_t k = 0; k < molecule.size(); k++)
-	//		{	
-	//			if (k == 0) molecule[k].num=1;
-	//			if (molecule[k].element == molecule[k+1].element); //if they have the same element then number them
-	//			
-	//		}
-
-			//print
-			for (size_t j = 0; j < molecule.size(); j++)
-			{	
-				std::cout << molecule[j].element<< molecule[j].x << molecule[j].y << molecule[j].z;
+			std::cout << std::endl << std::setprecision(2) << std::fixed;
+			
+			for (size_t k = 0; k < molecule.size(); k++)
+			{
+				std::cout <<std::setw(5)<< molecule[k].element << " ";
 
 			}
+
+			for (size_t j = 0; j < molecule.size(); j++)
+			{	
+				molecule[j].cal_dis(molecule);
+				molecule[j].print();
+			}
+			unsigned num;
+			std::cout << std::endl << std::endl << " Enter the atom number you want to see (1-" << total << "): ";
+			std::cin >> num;
+			std::cout << " ";
+			molecule[num - unsigned(1)].print();
+			std::cout << std::endl;
 			
-
-
-			//std::cout << xx << yy << zz;
-
-
-
-
-
 		}
 
 		//below are codes for degrees of unsaturation
@@ -137,7 +139,7 @@ int main()
 				unsigned elem_x = elem_arr[ELEM_F] + elem_arr[ELEM_Cl] + elem_arr[ELEM_Br] + elem_arr[ELEM_I];
 				std::cout << " Degree of Unsaturation is: "
 					<< ((2 * elem_arr[ELEM_C] + 2) - elem_arr[ELEM_H] + elem_arr[ELEM_N] - elem_x) / 2.0
-					<< std::endl << std::endl;
+					<< std::endl;
 			}
 		}
 
@@ -179,8 +181,6 @@ int main()
 			}
 			if (count == 0)
 				std::cout << "No Match" << std::endl;
-			std::cout << std::endl;
-
 		}
 
 		//below are codes for faster IR frequency anaylysis
@@ -201,6 +201,7 @@ int main()
 				std::cout << *r << std::endl;
 			}
 		}
+		std::cout << std::endl << " OK. Now,";
 	}
 
 }
