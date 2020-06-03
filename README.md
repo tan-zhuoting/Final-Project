@@ -110,3 +110,8 @@ Additional features: calculation of Degrees of Unsaturation and IR analysis.
 ### Day 21
 - I made a lot of progress in the intratomic distances calculations. I made a container as a member for each atom and let it store all possilbe intratomic distances it has, and I implemented many useful functions to give output data.
 - The next part should be formatting. I want the output to be a table the has atom type and atom number on top and on the side so all the possible distances can show up. I might have to use `setw` and `set_precision` again.
+
+### Day 22
+- I am finished with the calculation of geometry analysis and formatted them well. After many trials I made the ouput correct, nice, and clean. I have also promt to ask the user for their option to view a particular atom they want to see. 
+- I am approaching the end of this project, my next steps are making sure I delete all the testing codes and maybe write some comments about each part. 
+- Also, I will remove unecessary files, write summary and make a video on what my project does.
