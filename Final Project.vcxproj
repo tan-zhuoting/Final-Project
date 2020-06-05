@@ -156,7 +156,6 @@
     <ClInclude Include="atom.h" />
     <ClInclude Include="IR.h" />
     <ClInclude Include="IRResolver.hpp" />
-    <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="data.txt" />

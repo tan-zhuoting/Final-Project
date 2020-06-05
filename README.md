@@ -1,14 +1,25 @@
 # Chemistry Compound Geometry Analysis
-## PIC 10C Final Project
+#### PIC 10C Final Project
+**Attention!** Please go to submodule [IRResolver](https://github.com/tan-zhuoting/IRResolver.git) to see the Qt version of the IR analysis feature.
 
+## Introduction
 I am a chemistry major student and I've been doing computational chemistry calculations in my research lab. I usually use Softwares like Gaussian 16.0 to calculate the reaction energies, reaction dynamics, and compound geometries. I want to make a C++ program that can simulate such calculations so I can run a quick calculation on my computer without sending it to the cluster. I also want to design it to eliminate unnecessary steps so I can obtain my output files faster than calculating them using the software. The program could include calculating atomic bond distance, degrees of unsaturation, and geometry analysis, etc. 
 
 ## Goals: 
-Write a computer program to take a set of atomic symbols and Cartesian coordinates
-for a collection of atoms and determine all possible interatomic distances. Assume
-the coordinates are provided in Angstroms.
-
+Write a computer program to take a set of atomic symbols and Cartesian coordinates for a collection of atoms and determine all possible interatomic distances. Assumethe coordinates are provided in Angstroms.
 Additional features: calculation of Degrees of Unsaturation and IR analysis.
+
+## Conclusion:
+I did it! I made a practical app for chemistry calculations, and it is customable for different data files.
+However, developing this app is not easy at all! I encountered so many problems, but also learned a lot from them. No pain, no gain!
+Here are a few new things I learned in class and from online that was applied to this project:
+[x] [std::shared_ptr](https://en.cppreference.com/w/cpp/memory/shared_ptr) *Smart pointer* that retains shared ownership of an object through a pointer, used in 
+[x] [std::set<Key,Compare,Allocator>::find](https://en.cppreference.com/w/cpp/container/set/find) I followed the template online and got it working very well for the search function in my `IRResolver` feature. I also learned about the usage of `FatKey`, `LightKey` and reviewed how to use `auto`. Using `set` allows me to find the overlapping interval when inserting data, and then separate the already overlapped intervals and insert again.
+[x] [std::less<void>](https://en.cppreference.com/w/cpp/utility/functional/less_void) Compare type I used in the set. The `xxx` in `less<xxx>` is omittd because it can be deduced from actual code
+[x] [sscanf](http://www.cplusplus.com/reference/cstdio/sscanf/?kw=sscanf) Reads formatted input string from `data.txt`, %u for unsigned int.
+[x] [enum](https://en.cppreference.com/w/cpp/language/enum) Learned from `sieteMisiete y medio` card suit, and applied here to represent different elements in the calculation of degrees of unsaturation.
+[x] *Git-submodule* I used submodule to add another repository here to show the Qt version of my IRResolver
+
 
 ## Progress Log and Updates
 ### Day 1
@@ -112,6 +123,11 @@ Additional features: calculation of Degrees of Unsaturation and IR analysis.
 - The next part should be formatting. I want the output to be a table the has atom type and atom number on top and on the side so all the possible distances can show up. I might have to use `setw` and `set_precision` again.
 
 ### Day 22
-- I am finished with the calculation of geometry analysis and formatted them well. After many trials I made the ouput correct, nice, and clean. I have also promt to ask the user for their option to view a particular atom they want to see. 
+- I am finished with the calculation of geometry analysis and formatted them well. After many trials I made the ouput correct, nice, and clean. I also promt to ask the user for their option to view a particular atom they want to see. 
 - I am approaching the end of this project, my next steps are making sure I delete all the testing codes and maybe write some comments about each part. 
 - Also, I will remove unecessary files, write summary and make a video on what my project does.
+
+### Day 23
+- I made a mistake and almost deleted my file `IRResolver.cpp`, this is the time when I felt like git is super useful!
+- I made minor changes and mostly comments to explain my project, hopefully my notes can help people understand it a little bit more.
+- I wrote a conclusion for this project and some adjustment on REAME. I will record the video next time.

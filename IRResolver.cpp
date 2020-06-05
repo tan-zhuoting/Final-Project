@@ -2,12 +2,13 @@
 #include "IRResolver.hpp"
 #include <iostream>
 #include <cstdio>
+//reference:sample codes from https://en.cppreference.com/w/cpp/container/set/find
 
 IRResolver::IRResolver() {}
 
 IRResolver::~IRResolver() {}
 
-void IRResolver::do_insert(const IRFatKey& fat_key)
+void IRResolver::do_insert(const IRFatKey& fat_key) //recursive insert
 {
 	auto iter = ir_set.find(fat_key);
 	if (iter != ir_set.end()) {
@@ -76,8 +77,8 @@ void IRResolver::do_insert(const IRFatKey& fat_key)
 
 bool IRResolver::add_record(std::string record)
 {
-	auto pos = record.find_first_of(' ');
-	auto sub = record.substr(0, pos);
+	size_t pos = record.find_first_of(' ');
+	std::string sub = record.substr(0, pos);
 	IRFatKey fat_key;
 	int ret = std::sscanf(sub.c_str(), "%u-%u(", &fat_key.max_freq, &fat_key.min_freq);
 	if (ret != 2) {
@@ -92,14 +93,14 @@ bool IRResolver::add_record(std::string record)
 			return false;
 		}
 	}
-	auto rptr = std::make_shared<std::string>(record);
+	std::shared_ptr<std::string> rptr = std::make_shared<std::string>(record);//use shared pointer
 	fat_key.records.push_back(rptr);
 	do_insert(fat_key);
 	return true;
 }
 
 
-std::vector<std::shared_ptr<std::string>> IRResolver::find_records(unsigned freq)
+std::vector<std::shared_ptr<std::string>> IRResolver::find_records(unsigned freq) 
 {
 	auto iter = ir_set.find(freq);
 	if (iter == ir_set.end()) {
