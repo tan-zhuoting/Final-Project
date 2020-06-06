@@ -5,7 +5,7 @@
 #include <memory>
 #include <string>
 
-//This is a new version of IR, I want to try this so that I can use new apply new concepts in class
+//This is a new version of IR, I want to try this so that I can apply the new concepts in class
 //reference:https://en.cppreference.com/w/cpp/container/set/find
 
 class IRResolver
@@ -15,6 +15,7 @@ public:
     ~IRResolver();
     bool add_record(std::string record);
     std::vector<std::shared_ptr<std::string>> find_records(unsigned freq);
+
 private:
     struct IRFatKey
     {

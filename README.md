@@ -1,25 +1,36 @@
-# Chemistry Compound Geometry Analysis
-#### PIC 10C Final Project
-**Attention!** Please go to submodule [IRResolver](https://github.com/tan-zhuoting/IRResolver.git) to see the Qt version of the IR analysis feature.
+## Chemistry Compound Geometry Analysis
+##### PIC 10C Final Project
+**Attention!**  Please go to submodule [IRResolver](https://github.com/tan-zhuoting/IRResolver.git) to see the Qt version of the IR analysis feature.
 
 ## Introduction
 I am a chemistry major student and I've been doing computational chemistry calculations in my research lab. I usually use Softwares like Gaussian 16.0 to calculate the reaction energies, reaction dynamics, and compound geometries. I want to make a C++ program that can simulate such calculations so I can run a quick calculation on my computer without sending it to the cluster. I also want to design it to eliminate unnecessary steps so I can obtain my output files faster than calculating them using the software. The program could include calculating atomic bond distance, degrees of unsaturation, and geometry analysis, etc. 
 
 ## Goals: 
 Write a computer program to take a set of atomic symbols and Cartesian coordinates for a collection of atoms and determine all possible interatomic distances. Assumethe coordinates are provided in Angstroms.
+
 Additional features: calculation of Degrees of Unsaturation and IR analysis.
 
 ## Conclusion:
 I did it! I made a practical app for chemistry calculations, and it is customable for different data files.
 However, developing this app is not easy at all! I encountered so many problems, but also learned a lot from them. No pain, no gain!
-Here are a few new things I learned in class and from online that was applied to this project:
-[x] [std::shared_ptr](https://en.cppreference.com/w/cpp/memory/shared_ptr) *Smart pointer* that retains shared ownership of an object through a pointer, used in 
-[x] [std::set<Key,Compare,Allocator>::find](https://en.cppreference.com/w/cpp/container/set/find) I followed the template online and got it working very well for the search function in my `IRResolver` feature. I also learned about the usage of `FatKey`, `LightKey` and reviewed how to use `auto`. Using `set` allows me to find the overlapping interval when inserting data, and then separate the already overlapped intervals and insert again.
-[x] [std::less<void>](https://en.cppreference.com/w/cpp/utility/functional/less_void) Compare type I used in the set. The `xxx` in `less<xxx>` is omittd because it can be deduced from actual code
-[x] [sscanf](http://www.cplusplus.com/reference/cstdio/sscanf/?kw=sscanf) Reads formatted input string from `data.txt`, %u for unsigned int.
-[x] [enum](https://en.cppreference.com/w/cpp/language/enum) Learned from `sieteMisiete y medio` card suit, and applied here to represent different elements in the calculation of degrees of unsaturation.
-[x] *Git-submodule* I used submodule to add another repository here to show the Qt version of my IRResolver
 
+Here are a few new things I learned in class and from online that was applied to this project:
+- [x] **[std::shared_ptr](https://en.cppreference.com/w/cpp/memory/shared_ptr)** **Smart pointer** that retains shared ownership of an object through a pointer, used in `add_records` and `find_records` in `IRResolver`.
+- [x] **[std::set<Key,Compare,Allocator>::find](https://en.cppreference.com/w/cpp/container/set/find)** I followed the template online and got it working very well for the search function in my `IRResolver` feature. I also learned about the usage of `FatKey`, `LightKey` and reviewed how to use `auto`. Using `set` allows me to find the overlapping interval when inserting data, and then separate the already overlapped intervals and insert again.
+- [x] **[std::less<void>](https://en.cppreference.com/w/cpp/utility/functional/less_void)** Compare type I used in the set. The `xxx` in `less<xxx>` is omittd because it can be deduced from actual code
+- [x] **[sscanf](http://www.cplusplus.com/reference/cstdio/sscanf/?kw=sscanf)** Reads formatted input string from `data.txt`, %u for unsigned int.
+- [x] **[enum](https://en.cppreference.com/w/cpp/language/enum)** Learned from `sieteMisiete y medio` card suit, and applied here to represent different elements in the calculation of degrees of unsaturation.
+- [x] **Git-submodule** I used submodule to add another repository here to show the Qt version of my IRResolver
+- [x] **Qt features** including message box, slider, enable edit/copy text, etc.
+
+Here are the problems I encountered:
+- [x] Too many functional groups to assign: solved by reading in info from fromatted data files 
+- [x] Console display not showing correct charcters: solved by using `system("chcp 65001")`
+- [x] Dealing with overllaping intervals: details in `IRResolver`
+- [x] Empty to quit feature in main function could not work: solved by
+- [x] Visual Studio solution does not run the correct version of my file: solved by online tutorial: revert and rebuild
+- [ ] Messed up version control and made some commits that excluded the change in some files: eventually merged back, but will definitely be careful next time.
+- [ ] Qt creator not working for my project files, don't know why and still could not fix this issue
 
 ## Progress Log and Updates
 ### Day 1
@@ -131,3 +142,4 @@ Here are a few new things I learned in class and from online that was applied to
 - I made a mistake and almost deleted my file `IRResolver.cpp`, this is the time when I felt like git is super useful!
 - I made minor changes and mostly comments to explain my project, hopefully my notes can help people understand it a little bit more.
 - I wrote a conclusion for this project and some adjustment on REAME. I will record the video next time.
+
