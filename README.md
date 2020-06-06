@@ -143,3 +143,7 @@ Here are the problems I encountered:
 - I made minor changes and mostly comments to explain my project, hopefully my notes can help people understand it a little bit more.
 - I wrote a conclusion for this project and some adjustment on REAME. I will record the video next time.
 
+### Day 24
+- Today I added made more changes on the main function so it asks if the user wants enter another input within the same choice, so they don't have to go back and choose the same choice again. I wrote the "empty to go back" feature to quit the loop
+- I re-organized all the files and made minor adjustments. I will add more comments/ descriptions for all the functions.
+- I finished recording the ouput video and will edit it and publish soon. 
