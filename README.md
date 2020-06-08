@@ -1,6 +1,10 @@
 ## Chemistry Compound Geometry Analysis
 ##### PIC 10C Final Project
-**Attention!**  Please go to submodule [IRResolver](https://github.com/tan-zhuoting/IRResolver.git) to see the Qt version of the IR analysis feature.
+**Attention!**  
+
+Please go to submodule [IRResolver](https://github.com/tan-zhuoting/IRResolver.git) to see the Qt version of the IR analysis feature.
+
+Please checkout [this video](https://youtu.be/KqOr3BCoi6Q) to see how the app works.
 
 ## Introduction
 I am a chemistry major student and I've been doing computational chemistry calculations in my research lab. I usually use Softwares like Gaussian 16.0 to calculate the reaction energies, reaction dynamics, and compound geometries. I want to make a C++ program that can simulate such calculations so I can run a quick calculation on my computer without sending it to the cluster. I also want to design it to eliminate unnecessary steps so I can obtain my output files faster than calculating them using the software. The program could include calculating atomic bond distance, degrees of unsaturation, and geometry analysis, etc. 
@@ -12,11 +16,14 @@ Additional features: calculation of Degrees of Unsaturation and IR analysis.
 
 ## Conclusion:
 I did it! I made a practical app for chemistry calculations, and it is customable for different data files.
-However, developing this app is not easy at all! I encountered so many problems, but also learned a lot from them. No pain, no gain!
+
+There are three main features for this app, plus the Qt version, check out the details in [this video](https://youtu.be/KqOr3BCoi6Q).
+
+However, developing this app is not easy at all! There were many problems to solve and mistakes to catch, but I learned a lot from them. No pain, no gain!
 
 Here are a few new things I learned in class and from online that was applied to this project:
 - [x] **[std::shared_ptr](https://en.cppreference.com/w/cpp/memory/shared_ptr)** **Smart pointer** that retains shared ownership of an object through a pointer, used in `add_records` and `find_records` in `IRResolver`.
-- [x] **[std::set<Key,Compare,Allocator>::find](https://en.cppreference.com/w/cpp/container/set/find)** I followed the template online and got it working very well for the search function in my `IRResolver` feature. I also learned about the usage of `FatKey`, `LightKey` and reviewed how to use `auto`. Using `set` allows me to find the overlapping interval when inserting data, and then separate the already overlapped intervals and insert again.
+- [x] **[std::set<Key,Compare,Allocator>::find](https://en.cppreference.com/w/cpp/container/set/find)** I followed the template online and got it working very well for the search function in my `IRResolver` feature. I also learned about the usage of `FatKey`, `LightKey` and reviewed how to use iteratos. Using `set` allows me to find the overlapping interval when inserting data, and then separate the already overlapped intervals and insert again.
 - [x] **[std::less<void>](https://en.cppreference.com/w/cpp/utility/functional/less_void)** Compare type I used in the set. The `xxx` in `less<xxx>` is omittd because it can be deduced from actual code
 - [x] **[sscanf](http://www.cplusplus.com/reference/cstdio/sscanf/?kw=sscanf)** Reads formatted input string from `data.txt`, %u for unsigned int.
 - [x] **[enum](https://en.cppreference.com/w/cpp/language/enum)** Learned from `sieteMisiete y medio` card suit, and applied here to represent different elements in the calculation of degrees of unsaturation.
@@ -26,11 +33,11 @@ Here are a few new things I learned in class and from online that was applied to
 Here are the problems I encountered:
 - [x] Too many functional groups to assign: solved by reading in info from fromatted data files 
 - [x] Console display not showing correct charcters: solved by using `system("chcp 65001")`
-- [x] Dealing with overllaping intervals: details in `IRResolver`
-- [x] Empty to quit feature in main function could not work: solved by
-- [x] Visual Studio solution does not run the correct version of my file: solved by online tutorial: revert and rebuild
-- [ ] Messed up version control and made some commits that excluded the change in some files: eventually merged back, but will definitely be careful next time.
-- [ ] Qt creator not working for my project files, don't know why and still could not fix this issue
+- [x] Dealing with overllaping intervals: solved by using `std::set` and separating the intervals and recursive insert. details in `IRResolver`
+- [x] Empty to quit feature in main function could not work: solved by moving around the `cin.clear()`
+- [x] Visual Studio solution does not run the correct version of my file: solved by online tutorial: revert and rebuild.
+- [ ] Messed up version control and made some commits that excluded the change in some files: eventually I was able to merge back by copy/pasting from history. Will definitely be careful next time.
+- [ ] Qt creator not working for my project files, don't know why and still could not fix this issue.
 
 ## Progress Log and Updates
 ### Day 1
@@ -147,3 +154,7 @@ Here are the problems I encountered:
 - Today I added made more changes on the main function so it asks if the user wants enter another input within the same choice, so they don't have to go back and choose the same choice again. I wrote the "empty to go back" feature to quit the loop
 - I re-organized all the files and made minor adjustments. I will add more comments/ descriptions for all the functions.
 - I finished recording the ouput video and will edit it and publish soon. 
+
+### Day 25
+- Today I spent 3 hours editing [that video](https://youtu.be/KqOr3BCoi6Q), it is officially done!
+- I will spend more days to add more comments and wrap up everything, but I am done with updating the daily logs. 

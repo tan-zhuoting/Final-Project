@@ -18,10 +18,12 @@ struct atom
 	double z;
 };
 
+// functions for Degree of Unsaturation calculations
 int parse_number(const std::string& str, unsigned pos, unsigned& next_pos);
 int parse_elem(const std::string& str, unsigned pos, unsigned& next_pos);
 void print_error(const std::string& reason, const std::string& str, unsigned pos);
 
+// use for each elements in Degree of Unsaturation calculations
 enum ELEM
 {
 	ELEM_C = 0,
@@ -34,4 +36,4 @@ enum ELEM
 	ELEM_O,
 	ELEM_S,
 	ELEM_MAX
-}; // use for each elements
+}; 
