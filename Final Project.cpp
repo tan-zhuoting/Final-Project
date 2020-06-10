@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include <iomanip>
 #include <fstream>
@@ -9,7 +8,6 @@
 #include "atom.h"
 #include "IR.h"
 #include "IRResolver.hpp"
-
 
 
 int main()

@@ -8,7 +8,8 @@ IRResolver::IRResolver() {}
 
 IRResolver::~IRResolver() {}
 
-void IRResolver::do_insert(const IRFatKey& fat_key) //recursive insert
+//recursive insert, find intersection of intervals, separate to non-overlapping intervals and insert again
+void IRResolver::do_insert(const IRFatKey& fat_key) 
 {
 	auto iter = ir_set.find(fat_key);
 	if (iter != ir_set.end()) {
@@ -75,6 +76,7 @@ void IRResolver::do_insert(const IRFatKey& fat_key) //recursive insert
 	}
 }
 
+//add the functional group info to shared ptr then do insert, and collect the shared ptr to the vector in IRFatKey
 bool IRResolver::add_record(std::string record)
 {
 	size_t pos = record.find_first_of(' ');
@@ -93,13 +95,13 @@ bool IRResolver::add_record(std::string record)
 			return false;
 		}
 	}
-	std::shared_ptr<std::string> rptr = std::make_shared<std::string>(record);//use shared pointer
+	std::shared_ptr<std::string> rptr = std::make_shared<std::string>(record);//use shared pointer here
 	fat_key.records.push_back(rptr);
 	do_insert(fat_key);
 	return true;
 }
 
-
+//return matching records
 std::vector<std::shared_ptr<std::string>> IRResolver::find_records(unsigned freq) 
 {
 	auto iter = ir_set.find(freq);

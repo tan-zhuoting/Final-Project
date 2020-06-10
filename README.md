@@ -1,10 +1,6 @@
 ## Chemistry Compound Geometry Analysis
 ##### PIC 10C Final Project
-**Attention!**  
-
-Please go to submodule [IRResolver](https://github.com/tan-zhuoting/IRResolver.git) to see the Qt version of the IR analysis feature.
-
-Please checkout [this video](https://youtu.be/KqOr3BCoi6Q) to see how the app works.
+**Attention!**  Please go to submodule [IRResolver](https://github.com/tan-zhuoting/IRResolver.git) to see the Qt version of the IR analysis feature.  Please checkout [this video](https://youtu.be/4hLNxGJap40) to see how the app works.
 
 ## Introduction
 I am a chemistry major student and I've been doing computational chemistry calculations in my research lab. I usually use Softwares like Gaussian 16.0 to calculate the reaction energies, reaction dynamics, and compound geometries. I want to make a C++ program that can simulate such calculations so I can run a quick calculation on my computer without sending it to the cluster. I also want to design it to eliminate unnecessary steps so I can obtain my output files faster than calculating them using the software. The program could include calculating atomic bond distance, degrees of unsaturation, and geometry analysis, etc. 
@@ -16,9 +12,7 @@ Additional features: calculation of Degrees of Unsaturation and IR analysis.
 
 ## Conclusion:
 I did it! I made a practical app for chemistry calculations, and it is customable for different data files.
-
-There are three main features for this app, plus the Qt version, check out the details in [this video](https://youtu.be/KqOr3BCoi6Q).
-
+There are three main features for this app, plus the Qt version, check out the details in [this video](https://youtu.be/4hLNxGJap40).  
 However, developing this app is not easy at all! There were many problems to solve and mistakes to catch, but I learned a lot from them. No pain, no gain!
 
 Here are a few new things I learned in class and from online that was applied to this project:
@@ -36,6 +30,7 @@ Here are the problems I encountered:
 - [x] Dealing with overllaping intervals: solved by using `std::set` and separating the intervals and recursive insert. details in `IRResolver`
 - [x] Empty to quit feature in main function could not work: solved by moving around the `cin.clear()`
 - [x] Visual Studio solution does not run the correct version of my file: solved by online tutorial: revert and rebuild.
+- [x] Visual Studio does not run `sscanf`: solved by removing the warning using `#define _CRT_SECURE_NO_WARNINGS`
 - [ ] Messed up version control and made some commits that excluded the change in some files: eventually I was able to merge back by copy/pasting from history. Will definitely be careful next time.
 - [ ] Qt creator not working for my project files, don't know why and still could not fix this issue.
 
@@ -156,5 +151,5 @@ Here are the problems I encountered:
 - I finished recording the ouput video and will edit it and publish soon. 
 
 ### Day 25
-- Today I spent 3 hours editing [that video](https://youtu.be/KqOr3BCoi6Q), it is officially done!
+- Today I spent 3 hours editing [that video](https://youtu.be/4hLNxGJap40), it is officially done!
 - I will spend more days to add more comments and wrap up everything, but I am done with updating the daily logs. 
