@@ -19,7 +19,7 @@ However, developing this app is not easy at all! There were many problems to sol
 Here are a few new things I learned in class and from online that was applied to this project:
 - [x] **[std::shared_ptr](https://en.cppreference.com/w/cpp/memory/shared_ptr)** **Smart pointer** that retains shared ownership of an object through a pointer, used in `add_records` and `find_records` in `IRResolver`.
 - [x] **[std::set<Key,Compare,Allocator>::find](https://en.cppreference.com/w/cpp/container/set/find)** I followed the template online and got it working very well for the search function in my `IRResolver` feature. I also learned about the usage of `FatKey`, `LightKey` and reviewed how to use iteratos. Using `set` allows me to find the overlapping interval when inserting data, and then separate the already overlapped intervals and insert again.
-- [x] **[std::less<void>](https://en.cppreference.com/w/cpp/utility/functional/less_void)** Compare type I used in the set. The `xxx` in `less<xxx>` is omittd because it can be deduced from actual code
+- [x] **[std::less<>](https://en.cppreference.com/w/cpp/utility/functional/less_void)** Compare type I used in the set. The `xxx` in `less<xxx>` is omittd because it can be deduced from actual code
 - [x] **[sscanf](http://www.cplusplus.com/reference/cstdio/sscanf/?kw=sscanf)** Reads formatted input string from `data.txt`, %u for unsigned int.
 - [x] **[enum](https://en.cppreference.com/w/cpp/language/enum)** Learned from `sieteMisiete y medio` card suit, and applied here to represent different elements in the calculation of degrees of unsaturation.
 - [x] **Git-submodule** I used submodule to add another repository here to show the Qt version of my IRResolver
